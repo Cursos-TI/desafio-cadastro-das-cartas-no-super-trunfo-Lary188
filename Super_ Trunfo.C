@@ -11,6 +11,8 @@ int Populacao1 = 12325000;
 float Area1 = 1521.11;
 float PIB1 = 699.28;
 int Numero1 = 50;
+float Densipopu1 = Populacao1 / Area1;
+float PIBpercapita1 = PIB1 / Populacao1;
 
 // Carta 2
 char Carta2 = '2';
@@ -21,6 +23,9 @@ int Populacao2 = 6748000;
 float Area2 = 1200.25;
 float PIB2 = 300.50;
 int Numero2 = 30;
+float Densipopu2 = Populacao2 / Area2;
+float PIBpercapita2 = PIB2 / Populacao2;
+
 
 // Imprime Carta 1
 printf("Carta:%c\n", Carta1);
@@ -31,6 +36,8 @@ printf("População:%d\n", Populacao1);
 printf("Área em Km2:%.2f\n", Area1);
 printf("PIB:%.2f\n", PIB1);
 printf("Número de pontos turísticos:%d\n",Numero1);
+printf("Desnidade Pupulacional:%.2f hab/km2", Densipopu1);
+printf("PIB per Capta: %.2f reais", PIBpercapita1);
 
 // Imprime Carta 2
 printf("Carta:%c\n", Carta2);
@@ -41,6 +48,9 @@ printf("População:%d\n", Populacao2);
 printf("Área em Km2:%.2f\n", Area2);
 printf("PIB:%.2f\n", PIB2);
 printf("Número de pontos turísticos:%d\n", Numero2);
+printf("Desnidade Pupulacional:%.2f hab/km2", Densipopu2);
+printf("PIB per Capta: %.2f reais", PIBpercapita2);
+
 
 return 0;
 
