@@ -1,5 +1,8 @@
 {
     "files.associations": {
         "Super_ Trunfo.C": "cpp"
-    }
+    },
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
 }

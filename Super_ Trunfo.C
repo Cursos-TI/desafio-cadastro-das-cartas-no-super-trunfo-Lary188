@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+#include <string.h>
+void limpaBuffer(){
+    while(getchar() != '\n');
+}
 int main(){
 
 //Carta 1
@@ -13,7 +16,7 @@ float PIB1 = 699.28;
 int Numero1 = 50;
 float Densipopu1 = Populacao1 / Area1;
 float PIBpercapita1 = PIB1 / (float)Populacao1 * 1000000;
-float Superpoder1 = Populacao1 + Area1 + PIB1 + Numero1 + PIBpercapita1 < Densipopu1;
+float Superpoder1 = Populacao1 + Area1 + PIB1 + Numero1 + PIBpercapita1 + (1/Densipopu1);
 
 // Carta 2
 char Carta2 ='2';
@@ -26,7 +29,7 @@ float PIB2 = 300.50;
 int Numero2 = 30;
 float Densipopu2 = Populacao2 / Area2;
 float PIBpercapita2 = PIB2 / (float)Populacao2 * 1000000;
-float Superpoder2 = Populacao2 + Area2 + PIB2 + Numero2 + PIBpercapita2;
+float Superpoder2 = Populacao2 + Area2 + PIB2 + Numero2 + PIBpercapita2 +(1/Densipopu2);
 
 // Imprime Carta 1
 printf("Carta:");
@@ -35,12 +38,15 @@ printf("Estado:");
 scanf(" %c", &Estado1);
 printf("Código:");
 scanf("%s", &Codigo1);
+limpaBuffer();
 printf("Nome:");
-scanf(" %s", &Nome1); //Como só imprime até o primeiro espaço, o código foi executado com as Abreviações dos nomes de estados.
+fgets(Nome1,sizeof(Nome1),stdin); 
+Nome1[strcspn(Nome1, "\n")] = 0; // Remove newline character
 printf("População:");
 scanf("%lu", &Populacao1);
 printf("Área em Km2:");
-scanf("%f", &Area1);
+scanf("%.2f", &Area1);
+limpaBuffer();
 printf("PIB:");
 scanf(" %f", &PIB1);
 printf("Número de pontos turísticos:");
@@ -56,12 +62,15 @@ printf("Estado:");
 scanf(" %c", &Estado2);
 printf("Código:");
 scanf(" %s", &Codigo2);
+limpaBuffer();
 printf("Nome:");
-scanf(" %s", &Nome2); //Como só imprime até o primeiro espaço, o código foi executado com as Abreviações dos nomes de estados.
+fgets(Nome2, sizeof(Nome2),stdin);
+Nome2[strcspn(Nome2, "\n")] = 0; 
 printf("População:");
 scanf(" %lu", &Populacao2);
 printf("Área em Km2:");
-scanf(" %f", &Area2);
+scanf(" %.2f", &Area2);
+limpaBuffer();
 printf("PIB:");
 scanf(" %f", &PIB2);
 printf("Número de pontos turísticos:");
@@ -94,6 +103,15 @@ printf("Numero de pontos turísticos: %d\n", Numero2);
 printf("Densidade Populacional: %.2f hab/km2\n", Densipopu2);
 printf("PIB per capita: %.2f reais\n", PIBpercapita2);
 
+//Comparação das Cartas
+printf("\nComparação de Cartas\n");
+printf("População:Carta %d venceu. (%D)\n",(Populacao1>Populacao2)?1:2, (Populacao1<Populacao2)? 0:1);
+printf("Área:Carta %d venceu. (%D)\n",(Area1>Area2)?1:2, (Area1>Area2)? 0:1);
+printf("PIB:Carta %d venceu. (%D)\n",(PIB1>PIB2)?1:2, (PIB1<PIB2)? 0:1);
+printf("Pontos Turísticos:Carta %d venceu. (%D)\n",(Numero1>Numero2)?1:2, (Numero1<Numero2)? 0:1);
+printf("Densidade Populacional:Carta %d venceu. (%D)\n",(Densipopu1>Densipopu2)?1:2, (Densipopu1<Densipopu2)? 0:1);
+printf("PIB per capita:Carta %d venceu. (%D)\n",(PIBpercapita1>PIBpercapita2)?1:2, (PIBpercapita1<PIBpercapita2)? 0:1);
+printf("Super Poder:Carta %d venceu. (%D)\n",(Superpoder1>Superpoder2)?1:2, (Superpoder1<Superpoder2)? 0:1);
 
 return 0;
 
