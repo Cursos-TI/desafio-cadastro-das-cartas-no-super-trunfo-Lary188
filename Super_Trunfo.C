@@ -3,7 +3,25 @@
 void limpaBuffer(){
     while(getchar() != '\n');
 }
-int main(){
+void Menu(){
+printf("Bem- Vindo ao Super Trunfo LE\n");
+printf("Opções do menu:\n");
+    printf("1. Jogar - Inicia o processo de cadastro, comparação e declaração das cartas vencedoras.\n");
+    printf("2. Ajuda - Exibe as instruções do jogo.\n");
+    printf("3. Sair - Encerra o jogo.\n");
+
+}
+void Ajuda(){
+    printf("Instruções do jogo:\n");
+    printf("1. O jogo é composto por 2 jogadores, cada um com uma carta.\n");
+    printf("2. Cada carta possui 7 atributos: População, Área, PIB, Número de pontos turísticos, Densidade populacional, PIB per capita e Super poder.\n");
+    printf("3. Cada atributo é comparado com o da carta do outro jogador.\n");
+    printf("4. O jogador que tiver mais atributos vencidos, vence a rodada.\n");
+    printf("5. O jogo termina quando um jogador vencer 3 rodadas.\n");
+    printf("6. O jogador vencedor é declarado no final do jogo.\n");
+}
+
+void Jogar(){
 
 //Carta 1
 char Carta1;
@@ -195,6 +213,36 @@ else if(Pontos2 > Pontos1){
 else{
     printf("Empate.\n");
 }
+}
+
+void Sair(){
+    printf("Obrigado por jogar Super Trunfo LE.\n");
+}
+
+int main(){
+    int opcao;
+    do{
+        Menu();
+        printf("Digite a opção desejada: ");
+        printf("1. Jogar\n");
+        printf("2. Ajuda\n");
+        printf("3. Sair\n");
+        scanf("%d", &opcao);
+        limpaBuffer();
+        switch(opcao){
+            case 1:
+                Jogar();
+                break;
+            case 2:
+                Ajuda();
+                break;
+            case 3:
+                Sair();
+                break;
+            default:
+                printf("Opção inválida.\n");
+        }
+    }while(opcao != 3);
 
 return 0;
 
