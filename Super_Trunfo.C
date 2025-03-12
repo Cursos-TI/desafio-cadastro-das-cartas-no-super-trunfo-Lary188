@@ -205,13 +205,16 @@ printf("\n");
 //Determina a carta vencedora
 printf("Resultado FInal\n");
 if(Pontos1 > Pontos2){
-    printf("Carta 1 venceu com %d pontos.\n", Pontos1);
+    printf("Carta 1 %s venceu com %d pontos.\n",Nome1, Pontos1);
+    printf("\n");
 }
 else if(Pontos2 > Pontos1){
-    printf("Carta 2 venceu com %d pontos.\n", Pontos2);
+    printf("Carta 2 %s venceu com %d pontos.\n",Nome2, Pontos2);
+    printf("\n");
 }
 else{
     printf("Empate.\n");
+    printf("\n");
 }
 }
 
